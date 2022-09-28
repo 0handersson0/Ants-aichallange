@@ -1,16 +1,14 @@
 body {
-    background-color: white;
+    background-color: #0000ff;
 }
 
 .main {
     font-family: 'Press Start 2P', cursive;
-    margin-top: 10%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10% auto 0 auto;
     width: 70%;
     min-height: 50%;
     background-color: black;
-    color: greenyellow;
+    color: #adff2f;
 }
 
 .info {
@@ -18,7 +16,7 @@ body {
 }
 
 .info .whiteBox {
-    background-color: white;
+    background-color: #ffffff;
     color: black;
     margin-top: 5px;
     padding: 3px;
@@ -34,4 +32,8 @@ body {
 
 .icon {
     font-size: 35px;
+}
+
+.pointer {
+    cursor: pointer;
 }
