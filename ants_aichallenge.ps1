@@ -51,9 +51,9 @@ Write-Information -MessageData "Remove old starter pack folder" -InformationActi
 Remove-Item $Path\starterPack\ -Recurse
 Write-Information -MessageData "Remove templete Program.cs" -InformationAction Continue
 Remove-Item $Path\ants\Program.cs -Recurse
-Write-Information -MessageData "Open application" -InformationAction Continue
+Write-Information -MessageData "Open application folder" -InformationAction Continue
 Set-Location -Path $Path\ants
-& .\ants.csproj
+& Start-Process .
 Start-Process "http://ants.aichallenge.org/ants_tutorial.php"
 Write-Information -MessageData "Setup complete" -InformationAction Continue
 Write-Information -MessageData "Happy coding!!" -InformationAction Continue
