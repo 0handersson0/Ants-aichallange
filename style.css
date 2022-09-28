@@ -1,5 +1,5 @@
 body {
-    background-color: grey;
+    background-color: white;
 }
 
 .main {
@@ -26,6 +26,10 @@ body {
 
 .info ul li {
     margin-top: 5px;
+}
+
+.info ul li ul li{
+    list-style-type:circle;
 }
 
 .icon {
