@@ -13,15 +13,15 @@ Write-Information -MessageData "Running ants aichallenge setup" -InformationActi
 Write-Information -MessageData "Create new folder $Path" -InformationAction Continue
 New-Item -Path $Path -ItemType Directory
 Write-Information -MessageData "Download c# starter pack" -InformationAction Continue
-Invoke-WebRequest -Uri http://ants.aichallenge.org/starter_packages/csharp_starter_package.zip -OutFile $Path\csharp_starter_package.zip
+Invoke-WebRequest -Uri https://lemon-water-079a32603.1.azurestaticapps.net/csharp_starter_package_2022.zip -OutFile $Path\csharp_starter_package_2022.zip
 Write-Information -MessageData "Download tools" -InformationAction Continue
 Invoke-WebRequest -Uri http://ants.aichallenge.org/tools.zip -OutFile $Path\tools.zip
 Write-Information -MessageData "Unpacking files" -InformationAction Continue
-Expand-Archive $Path\csharp_starter_package.zip -DestinationPath $Path\starterPack
-Expand-Archive $Path\tools.zip -DestinationPath $Path\ants
+Expand-Archive $Path\csharp_starter_package_2022.zip -DestinationPath $Path\csharp_starter_package_2022
+Expand-Archive $Path\tools.zip -DestinationPath $Path
 Write-Information -MessageData "Removing zip files" -InformationAction Continue
 Remove-Item $Path\tools.zip
-Remove-Item $Path\csharp_starter_package.zip
+Remove-Item $Path\csharp_starter_package_2022.zip
 $p = & { python -V } 2>&1
 if ($p -is [System.Management.Automation.ErrorRecord]) {
     Write-Information -MessageData $p.Exception.Message -InformationAction Continue
@@ -46,9 +46,9 @@ Set-Location -Path $Path
 Write-Information -MessageData "Creating .Net projekt" -InformationAction Continue
 & dotnet new console --name ants
 Write-Information -MessageData "Move starter pack to project location" -InformationAction Continue
-Copy-Item -Path "$Path\starterPack\*" -Destination "$Path\ants\" -Recurse
+Copy-Item -Path "$Path\csharp_starter_package_2022\*" -Destination "$Path\ants\" -Recurse
 Write-Information -MessageData "Remove old starter pack folder" -InformationAction Continue
-Remove-Item $Path\starterPack\ -Recurse
+Remove-Item $Path\csharp_starter_package_2022\ -Recurse
 Write-Information -MessageData "Remove templete Program.cs" -InformationAction Continue
 Remove-Item $Path\ants\Program.cs -Recurse
 Write-Information -MessageData "Open application folder" -InformationAction Continue
