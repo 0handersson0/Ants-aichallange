@@ -44,7 +44,7 @@ Write-Information -MessageData "Remove .Net SDK 6.0.401-x64 installation file" -
 Remove-Item $Path\dotnet-sdk-6.0.401-win-x64.exe
 Set-Location -Path $Path
 Write-Information -MessageData "Creating .Net projekt" -InformationAction Continue
-& dotnet new console --name ants
+& dotnet new console --name ants -f net6.0
 Write-Information -MessageData "Move starter pack to project location" -InformationAction Continue
 Copy-Item -Path "$Path\csharp_starter_package_2022\*" -Destination "$Path\ants\" -Recurse
 Write-Information -MessageData "Remove old starter pack folder" -InformationAction Continue
