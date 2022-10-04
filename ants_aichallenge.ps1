@@ -53,6 +53,8 @@ Write-Information -MessageData "Remove templete Program.cs" -InformationAction C
 Remove-Item $Path\ants\Program.cs -Recurse
 Write-Information -MessageData "Open application folder" -InformationAction Continue
 Set-Location -Path $Path\ants
+New-Item "Run.cmd" 
+Set-Content "Run.cmd" 'python ../tools/playgame.py "bin\Debug\net6.0\ants.exe" "python ../tools/sample_bots/python/HunterBot.py" --map_file ../tools/maps/example/tutorial1.map --log_dir game_logs --turns 60 --scenario --food none --player_seed 7 -e'
 & Start-Process .
 Start-Process "http://ants.aichallenge.org/ants_tutorial.php"
 Write-Information -MessageData "Setup complete" -InformationAction Continue
