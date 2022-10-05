@@ -25,10 +25,8 @@ Push-Location "$Path\ants\"
 & git remote rm origin
 Pop-Location
 
-Write-Information -MessageData "Cloning c# starter pack" -InformationAction Continue
+Write-Information -MessageData "Cloning combat client" -InformationAction Continue
 & git clone "https://github.com/wintheriscomming/ants-aichallenge-combat-client" "$Path\combat\"
-Push-Location "$Path\combat\"
-Pop-Location
 
 Write-Information -MessageData "Download tools" -InformationAction Continue
 Invoke-WebRequest -Uri http://ants.aichallenge.org/tools.zip -OutFile $Path\tools.zip
