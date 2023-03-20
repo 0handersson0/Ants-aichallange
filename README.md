@@ -3,7 +3,7 @@ Instruktioner för Ants AI challange 🐜
 
 ### Installation:
 
-*  [download this](https://raw.githubusercontent.com/0handersson0/Ants-aichallange/b74d91c712e5dcdebdfdd12884ce337c8cb32a8e/ants_aichallenge.ps1)
+*  <a href="https://raw.githubusercontent.com/0handersson0/Ants-aichallange/b74d91c712e5dcdebdfdd12884ce337c8cb32a8e/ants_aichallenge.ps1" download>d</a>
 *  <a download="ants_aichallenge.ps1" href="https://raw.githubusercontent.com/0handersson0/Ants-aichallange/b74d91c712e5dcdebdfdd12884ce337c8cb32a8e/ants_aichallenge.ps1" title="ImageName">ssda
 </a>
 *   Öppna Powershell
