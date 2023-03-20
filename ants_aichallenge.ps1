@@ -79,7 +79,7 @@ else {
         }
     }
  if($dontUpdateDotNet -eq "true") {
-    Write-Information -MessageData "Found larger .net version installed, skipping .net download" -InformationAction Continue
+    Write-Information -MessageData "Found larger or equal .net version installed, skipping .net download" -InformationAction Continue
  } else {
     Write-Information -MessageData "Found lower version, downloading." -InformationAction Continue
     downloadDotnet
