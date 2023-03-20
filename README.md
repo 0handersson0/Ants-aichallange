@@ -3,14 +3,14 @@ Instruktioner för Ants AI challange 🐜
 
 ### Installation:
 
-*  <a href="https://raw.githubusercontent.com/0handersson0/Ants-aichallange/b74d91c712e5dcdebdfdd12884ce337c8cb32a8e/ants_aichallenge.ps1" download>Ladde ner installations scriptet</a>
 *   Öppna Powershell
 *   Klistra in följande i powershell consolen: Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass 
 *   Tryck Enter => Y => Enter
-*   Kör ants\_aichallenge.ps1 scriptet
+*   <a href="https://raw.githubusercontent.com/0handersson0/Ants-aichallange/b74d91c712e5dcdebdfdd12884ce337c8cb32a8e/ants_aichallenge.ps1">Ladda ner script</a> och kör sedan 
 *   .\\ants\_aichallenge.ps1
     *   Parameters
     *   (optional) -Path
+* Alternativt <a href="https://raw.githubusercontent.com/0handersson0/Ants-aichallange/b74d91c712e5dcdebdfdd12884ce337c8cb32a8e/ants_aichallenge.ps1">Kopiera och klistra in skriptet i powershell terminalen</a>
     
 ## Skapa och registrera lag 🪖
 För att skapa ett nytt team kör man powershell scriptet ”New-Team.ps1” i mappen ”combat”. Ange ett lagnamn som enbart består av bokstäver, siffror och underscore.
