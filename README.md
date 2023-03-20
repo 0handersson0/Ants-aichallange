@@ -3,7 +3,7 @@ Instruktioner för Ants AI challange 🐜
 
 ### Installation:
 
-*   <a download id="raw-url" href="https://github.com/0handersson0/Ants-aichallange/blob/b74d91c712e5dcdebdfdd12884ce337c8cb32a8e/ants_aichallenge.ps1">Ladda ner powershell scriptet</a>
+*  [click me to download](https://github.com/0handersson0/Ants-aichallange/blob/b74d91c712e5dcdebdfdd12884ce337c8cb32a8e/ants_aichallenge.ps1)
 *   Öppna Powershell
 *   Klistra in följande i powershell consolen: Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass 
 *   Tryck Enter => Y => Enter
