@@ -74,7 +74,7 @@ if ($a.count -eq 0) {
 else {
     For ($i=0; $i -lt $sdks.Length; $i++) {
         $version = $sdks[$i] -replace "[^0-9]" , ''
-        if ($version -gt 60401) {
+        if ( ($version -gt 60401) -or ($version -eq 60401) ) {
             $dontUpdateDotNet = 'true'
         }
     }
