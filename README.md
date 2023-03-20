@@ -3,9 +3,7 @@ Instruktioner för Ants AI challange 🐜
 
 ### Installation:
 
-*  <a href="https://raw.githubusercontent.com/0handersson0/Ants-aichallange/b74d91c712e5dcdebdfdd12884ce337c8cb32a8e/ants_aichallenge.ps1" download>d</a>
-*  <a download="ants_aichallenge.ps1" href="https://raw.githubusercontent.com/0handersson0/Ants-aichallange/b74d91c712e5dcdebdfdd12884ce337c8cb32a8e/ants_aichallenge.ps1" title="ImageName">ssda
-</a>
+*  <a href="https://raw.githubusercontent.com/0handersson0/Ants-aichallange/b74d91c712e5dcdebdfdd12884ce337c8cb32a8e/ants_aichallenge.ps1" download>Ladde ner installations scriptet</a>
 *   Öppna Powershell
 *   Klistra in följande i powershell consolen: Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass 
 *   Tryck Enter => Y => Enter
