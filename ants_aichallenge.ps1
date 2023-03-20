@@ -1,4 +1,4 @@
-﻿param (
+param (
     [string]$Path = "C:\codedojo\ants-aichallenge"
 )
 @"
@@ -36,7 +36,7 @@ Expand-Archive $Path\tools.zip -DestinationPath $Path -Force
 
 Write-Information -MessageData "Removing zip files" -InformationAction Continue
 Remove-Item $Path\tools.zip
-
+1
 $p = & { python -V } 2>&1
 if ($p -is [System.Management.Automation.ErrorRecord]) {
     Write-Information -MessageData $p.Exception.Message -InformationAction Continue
@@ -52,13 +52,39 @@ else {
     Write-Information -MessageData "Python installed" -InformationAction Continue
 }
 
-Write-Information -MessageData "Downloading.Net SDK 6.0.401-x64" -InformationAction Continue
-Invoke-WebRequest -Uri https://download.visualstudio.microsoft.com/download/pr/cebf08ce-ecf1-4439-8a0a-d81b3a4cad12/674ba293b83bdc9b1e00ddfa3ab82f10/dotnet-sdk-6.0.401-win-x64.exe -OutFile $Path\dotnet-sdk-6.0.401-win-x64.exe
-Write-Information -MessageData "Installing .Net SDK 6.0.401-x64" -InformationAction Continue
-Start-Process -FilePath “$Path\dotnet-sdk-6.0.401-win-x64.exe” -NoNewWindow -Wait
-Write-Information -MessageData "Remove .Net SDK 6.0.401-x64 installation file" -InformationAction Continue
-Remove-Item $Path\dotnet-sdk-6.0.401-win-x64.exe
-Set-Location -Path $Path
+
+function downloadDotnet
+{
+    Write-Information -MessageData "Downloading.Net SDK 6.0.401-x64" -InformationAction Continue
+    Invoke-WebRequest -Uri https://download.visualstudio.microsoft.com/download/pr/cebf08ce-ecf1-4439-8a0a-d81b3a4cad12/674ba293b83bdc9b1e00ddfa3ab82f10/dotnet-sdk-6.0.401-win-x64.exe -OutFile $Path\dotnet-sdk-6.0.401-win-x64.exe
+    Write-Information -MessageData "Installing .Net SDK 6.0.401-x64" -InformationAction Continue
+    Start-Process -FilePath “$Path\dotnet-sdk-6.0.401-win-x64.exe” -NoNewWindow -Wait
+    Write-Information -MessageData "Remove .Net SDK 6.0.401-x64 installation file" -InformationAction Continue
+    Remove-Item $Path\dotnet-sdk-6.0.401-win-x64.exe
+    Set-Location -Path $Path
+}
+
+$sdks = dotnet --list-sdks 2>$null
+$a = ($sdks -split '\r?\n')
+$dontUpdateDotNet = 'false'
+if ($a.count -eq 0) {
+    Write-Information -MessageData "Cant find dotnet, downloading." -InformationAction Continue
+    downloadDotnet
+}
+else {
+    For ($i=0; $i -lt $sdks.Length; $i++) {
+        $version = $sdks[$i] -replace "[^0-9]" , ''
+        if ($version -gt 60401) {
+            $dontUpdateDotNet = 'true'
+        }
+    }
+ if($dontUpdateDotNet -eq "true") {
+    Write-Information -MessageData "Found larger .net version installed, skipping .net download" -InformationAction Continue
+ } else {
+    Write-Information -MessageData "Found lower version, downloading." -InformationAction Continue
+    downloadDotnet
+ }
+}
 
 Write-Information -MessageData "Open application folder" -InformationAction Continue
 & Start-Process .
@@ -67,4 +93,3 @@ Write-Information -MessageData "Open application folder" -InformationAction Cont
 Start-Process "http://ants.aichallenge.org/ants_tutorial.php"
 Write-Information -MessageData "Setup complete" -InformationAction Continue
 Write-Information -MessageData "Happy coding!!" -InformationAction Continue
-
